@@ -24,11 +24,13 @@ search_button.addEventListener("click", async () => {
     temperature.innerText = `${result.current.temp_c} \u00B0 C`;
     condition.innerText = `${result.current.condition.text}`
     icon.setAttribute("src", `${result.current.condition.icon}`);
+    const isDaytime = result.current.is_day;
+    changeBackground(result.current.condition.text, isDaytime);
    }
 
    catch (error) {
     alert("Location not found");
-   }
+   } 
    
 });
 
@@ -51,6 +53,8 @@ async function gotLocation(position) {
     temperature.innerText = `${result.current.temp_c} \u00B0 C`;
     condition.innerText = `${result.current.condition.text}`
     icon.setAttribute("src", `${result.current.condition.icon}`);
+    const isDaytime = result.current.is_day;
+    changeBackground(result.current.condition.text, isDaytime);
    }
 
    catch (error) {
@@ -63,5 +67,33 @@ function failedToGet(){
 }
 
 auto_button.addEventListener("click", async () => {
-    let result = navigator.geolocation.getCurrentPosition(gotLocation,failedToGet);
+    navigator.geolocation.getCurrentPosition(gotLocation,failedToGet);
 });
+
+
+function changeBackground(condition, isDaytime) {
+    const body = document.body;
+    let backgroundImage;
+
+    if (isDaytime) {
+        if (condition.includes('sunny')) {
+            backgroundImage = 'url("images/sunny-day.jpg")';
+        } else if (condition.includes('ain')) {
+            backgroundImage = 'url("images/rainy-day.jpg")';
+        } else {
+            backgroundImage = 'url("images/cloudy-day.jpg")';
+        }
+    } else {
+        if (condition.includes('rain')) {
+            backgroundImage = 'url("images/rainy-night.jpeg")';
+        } else {
+            backgroundImage = 'url("images/cloudy-night.jpg")';
+        }
+    }
+
+    body.style.backgroundImage = backgroundImage;
+    body.style.backgroundRepeat = 'no-repeat';
+    body.style.backgroundSize = 'cover';
+}
+
+
