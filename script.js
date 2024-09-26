@@ -80,7 +80,7 @@ function changeBackground(condition, isDaytime) {
         body.style.backgroundImage= "url('images/day-image.jpg')";
         if (condition.includes('sunny')) {
             backgroundImage = 'url("images/sunny-day.jpg")';
-        } else if (condition.includes('ain')) {
+        } else if (condition.includes('rain')) {
             backgroundImage = 'url("images/rainy-day.jpg")';
         } else {
             backgroundImage = 'url("images/cloudy-day.jpg")';
