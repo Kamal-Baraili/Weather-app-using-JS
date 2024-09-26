@@ -77,7 +77,6 @@ function changeBackground(condition, isDaytime) {
     let backgroundImage;
 
     if (isDaytime) {
-        body.style.backgroundImage= "url('images/day-image.jpg')";
         if (condition.includes('sunny')) {
             backgroundImage = 'url("images/sunny-day.jpg")';
         } else if (condition.includes('rain')) {
@@ -86,7 +85,6 @@ function changeBackground(condition, isDaytime) {
             backgroundImage = 'url("images/cloudy-day.jpg")';
         }
     } else {
-        body.style.backgroundImage= "url('images/night-image.jpg')";
         if (condition.includes('rain')) {
             backgroundImage = 'url("images/rainy-night.jpeg")';
         } else {
@@ -94,9 +92,9 @@ function changeBackground(condition, isDaytime) {
         }
     }
 
-    container.style.backgroundImage = backgroundImage;
-    container.style.backgroundRepeat = 'no-repeat';
-    container.style.backgroundSize = 'cover';
+    body.style.backgroundImage = backgroundImage;
+    body.style.backgroundRepeat = 'no-repeat';
+    body.style.backgroundSize = 'cover';
 }
 
 
