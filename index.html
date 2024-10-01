@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Inquiry</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -11,27 +18,103 @@
       <div class="search_container">
         <div id="search">
           <input id="city-input" type="text" placeholder="Enter City Name" />
-          <button id="city-search">Search</button>
+          <button id="city-search">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1.75rem"
+              height="1.75rem"
+              viewBox="0 0 512 512"
+            >
+              <path
+                fill="white"
+                d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34M208 336c-70.7 0-128-57.2-128-128c0-70.7 57.2-128 128-128c70.7 0 128 57.2 128 128c0 70.7-57.2 128-128 128"
+              />
+            </svg>
+          </button>
         </div>
-        <button id="auto-weather">Get by location</button>
+        <button id="auto-weather">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="2em"
+            height="2em"
+            viewBox="0 0 100 100"
+          >
+            <path
+              fill="white"
+              d="M50.001 0C33.65 0 20.25 13.36 20.25 29.666c0 6.318 2.018 12.19 5.433 17.016L46.37 82.445c2.897 3.785 4.823 3.066 7.232-.2l22.818-38.83c.46-.834.822-1.722 1.137-2.629a29.3 29.3 0 0 0 2.192-11.12C79.75 13.36 66.354 0 50.001 0m0 13.9c8.806 0 15.808 6.986 15.808 15.766S58.807 45.43 50.001 45.43c-8.805 0-15.81-6.982-15.81-15.763S41.196 13.901 50 13.901"
+            />
+            <path
+              fill="white"
+              d="m68.913 48.908l-.048.126l.042-.115zM34.006 69.057C19.88 71.053 10 75.828 10 82.857C10 92.325 26.508 100 50 100s40-7.675 40-17.143c0-7.029-9.879-11.804-24.004-13.8l-1.957 3.332C74.685 73.866 82 76.97 82 80.572c0 5.05-14.327 9.143-32 9.143s-32-4.093-32-9.143c-.001-3.59 7.266-6.691 17.945-8.174z"
+              color="white"
+            />
+          </svg>
+        </button>
       </div>
 
       <div id="container">
+        <div id="remove" class="home_contents">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="250"
+            height="250"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="white"
+              d="M3.441 9.956a4.926 4.926 0 0 0 6.233 7.571l4.256 4.257a.773.773 0 0 0 1.169-1.007l-.075-.087l-4.217-4.218A4.927 4.927 0 0 0 3.44 9.956m13.213 6.545c-.225 1.287-.548 2.456-.952 3.454l.03.028l.124.14c.22.295.344.624.378.952a10.03 10.03 0 0 0 4.726-4.574zM12.25 16.5l2.284 2.287c.202-.6.381-1.268.53-1.992l.057-.294zm-2.936-5.45a3.38 3.38 0 1 1-4.78 4.779a3.38 3.38 0 0 1 4.78-4.78M15.45 10h-3.7a5.94 5.94 0 0 1 .892 5h2.71a26 26 0 0 0 .132-4.512zm1.507 0a28 28 0 0 1-.033 4.42l-.057.58h4.703a10.05 10.05 0 0 0 .258-5zm-2.095-7.593c.881 1.35 1.536 3.329 1.883 5.654l.062.44h4.59a10.03 10.03 0 0 0-6.109-5.958l-.304-.1zm-2.836-.405c-1.277 0-2.561 2.382-3.158 5.839c.465.16.912.38 1.331.658l5.088.001c-.54-3.809-1.905-6.498-3.261-6.498m-2.837.405A10.03 10.03 0 0 0 2.654 8.5h.995a5.92 5.92 0 0 1 3.743-.968c.322-1.858.846-3.47 1.527-4.68l.162-.275z"
+            />
+          </svg>
+          <h1>Get Weather Details By:</h1>
+          <ul>
+            <li>
+              Entering City Name and Clicking
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1rem"
+                height="1rem"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  fill="white"
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34M208 336c-70.7 0-128-57.2-128-128c0-70.7 57.2-128 128-128c70.7 0 128 57.2 128 128c0 70.7-57.2 128-128 128"
+                />
+              </svg>
+              Button
+            </li>
+            <li>
+              Clicking the Current Location
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1rem"
+                height="1rem"
+                viewBox="0 0 100 100"
+              >
+                <path
+                  fill="white"
+                  d="M50.001 0C33.65 0 20.25 13.36 20.25 29.666c0 6.318 2.018 12.19 5.433 17.016L46.37 82.445c2.897 3.785 4.823 3.066 7.232-.2l22.818-38.83c.46-.834.822-1.722 1.137-2.629a29.3 29.3 0 0 0 2.192-11.12C79.75 13.36 66.354 0 50.001 0m0 13.9c8.806 0 15.808 6.986 15.808 15.766S58.807 45.43 50.001 45.43c-8.805 0-15.81-6.982-15.81-15.763S41.196 13.901 50 13.901"
+                />
+                <path
+                  fill="white"
+                  d="m68.913 48.908l-.048.126l.042-.115zM34.006 69.057C19.88 71.053 10 75.828 10 82.857C10 92.325 26.508 100 50 100s40-7.675 40-17.143c0-7.029-9.879-11.804-24.004-13.8l-1.957 3.332C74.685 73.866 82 76.97 82 80.572c0 5.05-14.327 9.143-32 9.143s-32-4.093-32-9.143c-.001-3.59 7.266-6.691 17.945-8.174z"
+                  color="white"
+                />
+              </svg>
+              Button (to get weather details of your Current Location)
+            </li>
+          </ul>
+        </div>
+
         <img id="icon" alt="" />
-        <h1 id="city-details"></h1>
-        <h5 id="local-time"></h5>
-        <h3 id="temperature"></h3>
         <h4 id="condition"></h4>
-
-        <br />
+        <h2 id="city-details"></h2>
+        <h5 id="local-time"></h5>
+        <div class="temperature-container">
+          <span id="temperature"></span>
+          <span id="degree"></span>
+        </div>
       </div>
-      <h1 id="city-details"></h1>
-      <h5 id="local-time"></h5>
-      <h3 id="temperature"></h3>
-      <h4 id="condition"></h4>
-      <img id="icon" alt="" />
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>

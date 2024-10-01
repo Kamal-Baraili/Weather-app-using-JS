@@ -1,6 +1,11 @@
 body {
-  background-color: seagreen;
-  font-family: Arial, Helvetica, sans-serif;
+  background: url("images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,11 +17,30 @@ body {
   width: 400px;
   height: 555px;
   background-color: transparent;
-  backdrop-filter: blur(5px);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  border: 3px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   padding: 20px;
   color: #ffffff;
+}
+
+.home_contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home_contents > svg {
+  margin: 2rem 0;
+}
+
+ul {
+  margin: 0;
+}
+
+li {
+  margin: 1rem 0;
+  letter-spacing: 1px;
 }
 
 .search_container {
@@ -25,11 +49,11 @@ body {
 }
 
 #search {
-  width: 65%;
+  width: 75%;
   height: 35px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 #city-input,
@@ -38,18 +62,65 @@ body {
 }
 
 #city-input {
-  width: 70%;
-  padding: 2px 5px;
+  width: 75%;
+  padding: 2px 1em;
   border-radius: 16px;
-  border: none;
   background: transparent;
   color: white;
-  backdrop-filter: blur(30px);
-  border: 2px solid rgba(255, 255, 255, 0.2)
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  font-weight: 400;
+}
+
+#city-input::placeholder {
+  color: white;
+  font-weight: 600;
+}
+
+button {
+  color: white;
+  padding: 0.25rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+#container {
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 img {
-  height: 70px;
-  width: 70px;
-  margin: 0 auto;
+  margin-top: 30px;
+}
+
+#city-details {
+  margin-top: -10px;
+  font-size: 2.75rem;
+}
+
+#condition {
+  margin-top: -35px;
+  font-size: 1.25rem;
+}
+
+#local-time {
+  margin-top: -55px;
+  font-size: 1.5rem;
+}
+
+.temperature-container {
+  margin-left: 30px;
+  display: flex;
+  align-items: flex-start;
+}
+
+#temperature {
+  font-size: 7rem;
+}
+
+#degree {
+  font-size: 3rem;
 }

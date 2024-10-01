@@ -2,11 +2,13 @@ const input = document.getElementById('city-input');
 const search_button = document.getElementById('city-search');
 const auto_button = document.getElementById('auto-weather');
 
+const remove_contents = document.getElementById('remove');
 const city_location = document.getElementById('city-details');
 const local_time = document.getElementById('local-time');
 const temperature = document.getElementById('temperature');
 const condition = document.getElementById('condition');
 const icon = document.getElementById('icon');
+const degree = document.getElementById('degree');
 
 async function getData(city_location) {
     let data = await fetch(
@@ -19,11 +21,15 @@ search_button.addEventListener("click", async () => {
    try{
     const val = input.value;
     const result = await getData(val);
+    remove_contents.remove();
     city_location.innerText = `${result.location.name}, ${result.location.country}`;
-    local_time.innerText = `${result.location.localtime} (24-hr)`;
-    temperature.innerText = `${result.current.temp_c} \u00B0 C`;
+    local_time.innerText = `${result.location.localtime}`.replaceAll("-","/");
+    temperature.innerText = `${result.current.temp_c}`;
+    degree.innerText = " \u00B0 C";
     condition.innerText = `${result.current.condition.text}`
     icon.setAttribute("src", `${result.current.condition.icon}`);
+    icon.style.height = "120px";
+    icon.style.width = "120px";
     const isDaytime = result.current.is_day;
     changeBackground(result.current.condition.text, isDaytime);
    }
@@ -48,11 +54,15 @@ async function gotLocation(position) {
     )
     try{
     let result = res;
+    remove_contents.remove();
     city_location.innerText = `${result.location.name}, ${result.location.country}`;
-    local_time.innerText = `${result.location.localtime} (24-hr)`;
-    temperature.innerText = `${result.current.temp_c} \u00B0 C`;
+    local_time.innerText = `${result.location.localtime}`.replaceAll("-","/");
+    temperature.innerText = `${result.current.temp_c}`;
+    degree.innerText = " \u00B0 C";
     condition.innerText = `${result.current.condition.text}`
     icon.setAttribute("src", `${result.current.condition.icon}`);
+    icon.style.height = "120px";
+    icon.style.width = "120px";
     const isDaytime = result.current.is_day;
     changeBackground(result.current.condition.text, isDaytime);
    }
