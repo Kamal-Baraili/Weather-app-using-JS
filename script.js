@@ -77,16 +77,20 @@ function changeBackground(condition, isDaytime) {
     let backgroundImage;
 
     if (isDaytime) {
-        if (condition.includes('sunny')) {
+        if (condition.includes('Sunny')) {
             backgroundImage = 'url("images/sunny-day.jpg")';
-        } else if (condition.includes('rain')) {
+        } else if (condition.includes('Clear')) {
+            backgroundImage = 'url("images/clear-day.jpg")';
+        }else if (condition.includes('rain')) {
             backgroundImage = 'url("images/rainy-day.jpg")';
         } else {
             backgroundImage = 'url("images/cloudy-day.jpg")';
         }
     } else {
         if (condition.includes('rain')) {
-            backgroundImage = 'url("images/rainy-night.jpeg")';
+            backgroundImage = 'url("images/rainy-night.jpg")';
+        } else if(condition.includes('Clear')){
+            backgroundImage = 'url("images/clear-night.jpg")';
         } else {
             backgroundImage = 'url("images/cloudy-night.jpg")';
         }

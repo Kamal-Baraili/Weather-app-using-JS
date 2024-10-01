@@ -7,28 +7,30 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="search">
-      <input id="city-input" type="text" placeholder="Enter City Name" />
-      <button id="city-search">Search</button>
-    </div>
+    <div class="main_container">
+      <div class="search_container">
+        <div id="search">
+          <input id="city-input" type="text" placeholder="Enter City Name" />
+          <button id="city-search">Search</button>
+        </div>
+        <button id="auto-weather">Get by location</button>
+      </div>
 
-    <div id="container">
+      <div id="container">
+        <img id="icon" alt="" />
+        <h1 id="city-details"></h1>
+        <h5 id="local-time"></h5>
+        <h3 id="temperature"></h3>
+        <h4 id="condition"></h4>
+
+        <br />
+      </div>
       <h1 id="city-details"></h1>
       <h5 id="local-time"></h5>
       <h3 id="temperature"></h3>
       <h4 id="condition"></h4>
       <img id="icon" alt="" />
-
-      <br />
     </div>
-
-    <button id="auto-weather">Get by location</button>
-
-    <h1 id="city-details"></h1>
-    <h5 id="local-time"></h5>
-    <h3 id="temperature"></h3>
-    <h4 id="condition"></h4>
-    <img id="icon" alt="" />
 
     <script src="script.js"></script>
   </body>
